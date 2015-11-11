@@ -7,7 +7,7 @@
   "main": "dist/cjs/index.js",
   "jsnext:main": "dist/rollup-plugin-typescript.es6.js",
   "scripts": {
-    "test": "mocha -R spec",
+    "test": "rm -rf temp && mocha -R spec",
     "pretest": "npm run build",
     "build": "rm -rf dist/* && tsc",
     "prepublish": "npm test"

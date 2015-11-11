@@ -26,7 +26,7 @@ describe('rollup-plugin-typescript', function () {
       return System.import('./temp/basic/main.js')
     }).then(function(Greeter){
       var greeter = new Greeter('hello world');
-      console.assert(greeter.greet() === 'hello world!!!');
+      assert.equal(greeter.greet(), 'hello world!!!');
     })
   });
   
@@ -42,7 +42,7 @@ describe('rollup-plugin-typescript', function () {
     }).then(function(written){
       return System.import('./temp/app/main.js')
     }).then(function(mod){
-      console.assert(mod.result === 'foo');
+      assert.equal(mod.result, 'foo');
     });
   });
 });
