@@ -4,11 +4,8 @@ var typescriptPlugin = require( '..' );
 
 process.chdir( __dirname );
 
-describe( 'rollup-plugin-babel', function () {
-	this.timeout( 5000 );
-
+describe( 'rollup-plugin-typescript', function () {
 	it( 'runs code through typescript', function () {
-		var start = Date.now();
 		return rollup.rollup({
 			entry: 'samples/basic/main.ts',
 			plugins: [ typescriptPlugin() ]
