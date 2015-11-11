@@ -4,12 +4,12 @@
   "author": "Rich Harris",
   "repo": "https://github.com/rollup/rollup-plugin-typescript",
   "license": "MIT",
-  "main": "dist/rollup-plugin-typescript.cjs.js",
+  "main": "dist/cjs/index.js",
   "jsnext:main": "dist/rollup-plugin-typescript.es6.js",
   "scripts": {
-    "test": "mocha",
+    "test": "rm -rf temp && mocha -R spec",
     "pretest": "npm run build",
-    "build": "rm -rf dist/* && rollup -c -f cjs -o dist/rollup-plugin-typescript.cjs.js && rollup -c -f es6 -o dist/rollup-plugin-typescript.es6.js",
+    "build": "rm -rf dist/* && tsc",
     "prepublish": "npm test"
   },
   "files": [
@@ -18,9 +18,11 @@
     "README.md"
   ],
   "dependencies": {
-    "typescript": "^1.6.2"
+    "rollup": "^0.20.5",
+    "typescript": "^1.8.0-dev.20151110"
   },
   "devDependencies": {
-    "babel-preset-es2015-rollup": "^1.0.0"
+    "babel-preset-es2015-rollup": "^1.0.0",
+    "systemjs": "^0.19.5"
   }
 }

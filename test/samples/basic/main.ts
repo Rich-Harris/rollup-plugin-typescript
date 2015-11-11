@@ -1,10 +1,6 @@
-class Greeter {
+export class Greeter {
 	constructor(public greeting: string) { }
 	greet() {
-		return "<h1>" + this.greeting + "</h1>";
+		return `${this.greeting}!!!`;
 	}
 };
-
-var greeter = new Greeter("Hello, world!");
-
-export default greeter.greet();
